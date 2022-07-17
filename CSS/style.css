@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root{
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.products{
+    text-align: center;
+    color: var(--very-dark-magenta);
+    display: flex;
+    flex-direction: column;
+}
+
+.products__title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.products__paragraph{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--dark-grayish-magenta);
+    margin-bottom: 40px;
+}
+
+.products__ranking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products__item{
+    background-color: var(--light-grayish-magenta);
+    margin-bottom: 20px;
+    width: 330px;
+    height: 80px;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimony{
+    margin-top: 50px;
+}
+
+.testimony__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+}
+
+.testimony__item{
+    background-color: var(--very-dark-magenta);
+    max-width: 370px;
+    height: 250px;
+    padding: 38px;
+    border-radius: 10px;
+}
+
+.testimony__person{
+    display: flex;
+    align-items: center;
+}
+
+.testimony__picture{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.testimony__img{
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimony__info{
+    font-size: .8rem;
+    line-height: 1.5;
+}
+
+.testimony__name{
+    font-weight: 700;
+}
+
+.testimony__job{
+    color: var(--soft-pink);
+    font-weight: 400;
+}
+
+.testimony__paragraph{
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px){
+    body{
+        background: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom right;
+    }
+
+    .products__item{
+        flex-direction: row;
+        width: 445px;
+        height: 50px;
+        padding-left: 20px;
+        justify-content: flex-start;
+    }
+
+    .products__item:nth-of-type(1){
+        align-self: flex-start;
+    }
+
+    .products__item:nth-of-type(3){
+        align-self: flex-end;
+    }
+
+    .products__stars{
+        margin-right: 30px;
+    }
+
+    .testimony__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .testimony__item:nth-of-type(3){
+        grid-column: 1/3;
+        grid-row: 2/3;
+        justify-self: center;
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+        width: 85%;
+    }
+
+    .products{
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+        row-gap: 20px;
+        margin: 0;
+    }
+
+    .products__texts{
+        grid-column: 1/6;
+        text-align: left;
+    }
+
+    .products__title{
+        font-size: 50px;
+        text-align: left;
+        line-height: 45px;
+        margin-bottom: 10px;
+    }
+
+    .products__ranking{
+        grid-column: 7/-1;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .testimony__container{
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        height: 320px;
+    }
+
+    .testimony__item:nth-of-type(1){
+        align-self: flex-start;
+    }
+
+    .testimony__item:nth-of-type(3){
+        align-self: flex-end;
+    }
+}
